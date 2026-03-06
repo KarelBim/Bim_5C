@@ -5,8 +5,7 @@ import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Hrac> hracy =  new ArrayList<Hrac>();
-        ArrayList<Integer> odstranit = new ArrayList<>();
+        ArrayList<Hrac> hracy =  new ArrayList<>();
         hracy.add(new Hrac("Pepa",0,5));
         hracy.add(new Hrac("Adam",1,1));
         hracy.add(new Hrac("Jaroslav",2,0));
