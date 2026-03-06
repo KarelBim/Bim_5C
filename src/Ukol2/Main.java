@@ -7,12 +7,12 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<Hrac> hracy =  new ArrayList<>();
         hracy.add(new Hrac("Pepa",0,5));
-        hracy.add(new Hrac("Adam",1,1));
-        hracy.add(new Hrac("Jaroslav",2,0));
-        hracy.add(new Hrac("Vladislav",1,2));
-        hracy.add(new Hrac("Martin",0,10));
-        hracy.add(new Hrac("Ondra",1,1));
-        hracy.add(new Hrac("Metoděj",0,3));
+        hracy.add(new Hrac("Adam",1,0));
+        hracy.add(new Hrac("Jaroslav",2,2));
+        hracy.add(new Hrac("Vladislav",1,0));
+        hracy.add(new Hrac("Martin",0,3));
+        hracy.add(new Hrac("Ondra",1,10));
+        hracy.add(new Hrac("Metoděj",0,0));
         Hrac prvni = new Hrac("spatny",2,0);
         Hrac druhy = new Hrac("spatny",2,0);
         Hrac treti = new Hrac("spatny",2,0);
@@ -23,21 +23,21 @@ public class Main {
             if(hrac.getPozice().equals("útočník")){
                 System.out.println(hrac.getJmeno() + " je útočník");
             }
-            if(hrac.getGoly() == 0){
-                itr.remove();
-            }
             celkemGolu += hrac.getGoly();
-            if(hrac.getGoly() > prvni.getGoly()){
+            if(hrac.getGoly() >= prvni.getGoly()){
                 treti = druhy;
                 druhy = prvni;
                 prvni = hrac;
             }
-            else if(hrac.getGoly() > druhy.getGoly()){
+            else if(hrac.getGoly() >= druhy.getGoly()){
                 treti = druhy;
                 druhy = hrac;
             }
-            else{
+            else if(hrac.getGoly() >= treti.getGoly()){
                 treti = hrac;
+            }
+            if(hrac.getGoly() == 0){
+                itr.remove();
             }
         }
         Hrac[] hracyNej = {prvni,druhy,treti};

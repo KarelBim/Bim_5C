@@ -12,6 +12,6 @@ public class Main {
             soucet += a;
         }
         System.out.println();
-        System.out.println(soucet);
+        System.out.println("Součet: " + soucet);
     }
 }
